@@ -1,58 +1,70 @@
 # Evaluation Set
 
-This evaluation set can be used to test the workflow.
+## Case 1: Normal Case (Delayed Delivery)
 
-## Case 1
+**Input:**
+"I ordered a product two weeks ago and it still hasn't arrived. Can you check the status?"
 
-Customer message:
+**Good Output Should:**
 
-"My package is late and I need help."
+* Apologize for the delay
+* Acknowledge the issue clearly
+* Offer to check order status
+* Maintain a polite and professional tone
 
-Expected output:
+---
 
-- Issue type: delivery problem
-- Tone: calm or neutral
-- Response should mention shipping status or order update
+## Case 2: Normal Case (Refund Request)
 
-## Case 2
+**Input:**
+"I want to return my item and get a refund. What should I do?"
 
-Customer message:
+**Good Output Should:**
 
-"The product arrived broken and I want a refund."
+* Clearly explain the refund/return process
+* Provide next steps
+* Be concise and helpful
+* Maintain a friendly tone
 
-Expected output:
+---
 
-- Issue type: refund request or damaged product
-- Tone: neutral or frustrated
-- Response should mention refund or replacement
+## Case 3: Edge Case (Very Short / Vague Input)
 
-## Case 3
+**Input:**
+"This is bad."
 
-Customer message:
+**Good Output Should:**
 
-"I cannot log into my account because I forgot my password."
+* Politely ask for more details
+* Avoid making assumptions
+* Encourage the customer to clarify the issue
+* Maintain a professional tone
 
-Expected output:
+---
 
-- Issue type: account access
-- Tone: neutral
-- Response should mention password reset
+## Case 4: Edge Case (Angry Customer)
 
-## Case 4
+**Input:**
+"This is the worst service ever. You guys are completely useless."
 
-Customer message:
+**Good Output Should:**
 
-"This is very disappointing. My order is still missing."
+* Remain calm and professional
+* Show empathy
+* Avoid defensive language
+* Offer help or next steps
 
-Expected output:
+---
 
-- Issue type: delivery problem
-- Tone: frustrated
-- Response should show empathy
+## Case 5: Likely Failure Case (Missing / Unknown Information)
 
-## Simple Evaluation Criteria
+**Input:**
+"Why was my account suspended? I didn't do anything wrong."
 
-- Is the issue identified correctly?
-- Does the response match the customer's tone?
-- Is the response polite?
-- Does the response suggest a useful next step?
+**Good Output Should:**
+
+* Avoid hallucinating a specific reason
+* Acknowledge the concern
+* Explain that further investigation is needed
+* Suggest contacting support or checking account policies
+* Maintain a reassuring tone
