@@ -1,27 +1,3 @@
-"""
-Homework 2: Customer Support Response Drafting
-
-This script demonstrates a simple GenAI workflow for drafting
-customer support responses.
-
-Features:
-- runs from the command line
-- makes an LLM API call when available
-- uses a configurable system prompt
-- prints structured output
-- saves results to a JSON file
-- falls back to a template response if the API call fails
-
-Setup:
-1. Install the OpenAI package:
-   pip3 install openai
-
-2. Set your API key in Terminal:
-   export OPENAI_API_KEY="your_api_key_here"
-
-3. Run the script:
-   python3 app.py
-"""
 
 from __future__ import annotations
 
@@ -36,9 +12,6 @@ except ImportError:
     OpenAI = None  # type: ignore
 
 
-# -----------------------------
-# Configurable settings
-# -----------------------------
 MODEL_NAME = "gpt-4.1-mini"
 
 SYSTEM_PROMPT = """
@@ -58,9 +31,6 @@ Instead, politely ask for clarification or explain that the issue needs review.
 OUTPUT_FILE = Path("outputs.json")
 
 
-# -----------------------------
-# Evaluation cases
-# -----------------------------
 EVAL_CASES: list[dict[str, Any]] = [
     {
         "id": 1,
@@ -99,9 +69,6 @@ EVAL_CASES: list[dict[str, Any]] = [
 ]
 
 
-# -----------------------------
-# LLM client setup
-# -----------------------------
 def get_client() -> OpenAI | None:
     """
     Return an OpenAI client if the package and API key are available.
@@ -117,9 +84,7 @@ def get_client() -> OpenAI | None:
     return OpenAI(api_key=api_key)
 
 
-# -----------------------------
-# Fallback response
-# -----------------------------
+
 def fallback_response(customer_message: str) -> str:
     """
     Return a simple template response when the LLM is unavailable.
@@ -135,9 +100,7 @@ def fallback_response(customer_message: str) -> str:
     )
 
 
-# -----------------------------
-# LLM generation
-# -----------------------------
+
 def generate_response(client: OpenAI | None, customer_message: str) -> tuple[str, str]:
     """
     Generate a response using the LLM if possible.
@@ -172,9 +135,7 @@ Write a customer support response.
         return fallback_response(customer_message), "fallback"
 
 
-# -----------------------------
-# Simple review checks
-# -----------------------------
+
 def simple_review(response_text: str) -> dict[str, bool]:
     """
     Perform a lightweight review of the generated response.
@@ -199,9 +160,7 @@ def simple_review(response_text: str) -> dict[str, bool]:
     }
 
 
-# -----------------------------
-# One-case workflow
-# -----------------------------
+
 def run_case(client: OpenAI | None, case: dict[str, Any]) -> dict[str, Any]:
     """
     Run the workflow for one evaluation case.
@@ -233,9 +192,7 @@ def run_case(client: OpenAI | None, case: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
-# -----------------------------
-# Save outputs
-# -----------------------------
+
 def save_results(results: list[dict[str, Any]]) -> None:
     """
     Save workflow outputs to a JSON file.
@@ -247,9 +204,7 @@ def save_results(results: list[dict[str, Any]]) -> None:
     print(f"\nSaved results to {OUTPUT_FILE}")
 
 
-# -----------------------------
-# Main
-# -----------------------------
+
 def main() -> None:
     """
     Main program entry point.
