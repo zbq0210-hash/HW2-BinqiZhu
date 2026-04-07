@@ -51,4 +51,4 @@ Future improvements could include:
 * Better prompt engineering for more accurate responses
 * Integration with customer databases for personalized replies
 * More robust evaluation methods to measure response quality
-<img width="415" height="692" alt="image" src="https://github.com/user-attachments/assets/ad186bfc-3480-4a0a-82ea-7a95a5b94247" />
+
