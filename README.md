@@ -1,45 +1,54 @@
-# GenAI Workflow Assignment: Customer Support Response Drafting
 
-This is a simple Python project for a beginner-friendly GenAI workflow assignment.
+## Business Use Case
 
-The workflow focuses on drafting customer support responses based on a customer's message. The project does not call a real AI model. Instead, it simulates a clear workflow that is easy to understand:
+The selected workflow for this project is **drafting customer support responses**. This workflow is commonly used in businesses where customer support agents need to respond to customer inquiries, complaints, or requests in a professional and efficient manner.
 
-1. Read the customer issue
-2. Identify the issue type and tone
-3. Draft a support response
-4. Review the response for quality
+## User
 
-## Files
+The primary users of this system are customer support agents who are responsible for communicating with customers through written messages.
 
-- `app.py` - simple Python script that runs the workflow
-- `prompts.md` - example prompts for the drafting task
-- `eval_set.md` - small evaluation set with sample customer messages
-- `report.md` - short report describing the workflow
+## Input
 
-## How to Run
+The input to the system is a customer message. This may include complaints, questions, or requests.
 
-Make sure you have Python 3 installed.
+Example:
+"I ordered a product two weeks ago and it still hasn't arrived. This is very frustrating."
 
-```bash
-python3 app.py
-```
+## Output
 
-## What the Script Does
+The output is a professional, polite, and helpful response that addresses the customer’s issue and provides appropriate next steps.
 
-The script includes a few sample customer support tickets, such as:
+Example:
+"Thank you for reaching out. We sincerely apologize for the delay in your order. I understand how frustrating this must be. Let me check the status for you and provide an update shortly."
 
-- delayed delivery
-- refund request
-- damaged product
-- password reset
+## Workflow Steps
 
-For each ticket, the script:
+1. Input: receive a customer message
+2. Analysis: identify the main issue and customer intent
+3. Tone handling: ensure the response is polite and empathetic
+4. Response drafting: generate a clear and helpful reply
+5. Review: check for clarity, professionalism, and completeness
 
-- detects the issue type
-- checks whether the customer sounds calm, upset, or frustrated
-- drafts a polite support reply
-- prints a short quality check
+## Why This Workflow Matters
 
-## Why This Is Useful
+Customer support teams handle a high volume of similar inquiries. A GenAI-assisted workflow can:
 
-In a real GenAI system, a language model would generate the response. In this beginner version, we use simple Python logic so the workflow is easy to follow and explain in class.
+* Improve response speed
+* Ensure consistent tone and quality
+* Reduce workload for support agents
+* Help less experienced agents produce better responses
+
+## Limitations
+
+* The system may generate incorrect or incomplete information
+* Some cases may require human review, especially for complex or sensitive issues
+* The quality of responses depends on prompt design and model behavior
+
+## Possible Future Improvements
+
+Future improvements could include:
+
+* Better prompt engineering for more accurate responses
+* Integration with customer databases for personalized replies
+* More robust evaluation methods to measure response quality
+<img width="415" height="692" alt="image" src="https://github.com/user-attachments/assets/ad186bfc-3480-4a0a-82ea-7a95a5b94247" />
