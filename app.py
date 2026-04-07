@@ -1,4 +1,7 @@
+!pip install openai
 
+import os
+os.environ["OPENAI_API_KEY"] = "Your API"
 from __future__ import annotations
 
 import json
